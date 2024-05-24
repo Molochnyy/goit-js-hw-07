@@ -23,6 +23,11 @@ function createBoxes() {
       box.appendChild(elem)
       u = u + 10;
     }
+    for (let i = 1; i <= amount; i++) {
+      bgColor = getRandomHexColor();
+      markup += `<div style="width: ${size}px; height: ${size}px; background-color: ${bgColor}"></div>`;
+      size += 10;
+    }
   }
 }
 
