@@ -1,14 +1,8 @@
 "use strict";
 
-let input = document.getElementById("name-input");
-let nameOutput = document.getElementById("name-output");
+const textInput = document.querySelector("#name-input");
+const output = document.querySelector("#name-output");
 
-input.oninput = function () {
-    nameOutput.innerHTML = 'Anonymous';
-    if (input.value === '') {
-        nameOutput.innerHTML = nameOutput.textContent;
-    }
-    else {
-        nameOutput.innerHTML = input.value;
-    }
-}
+textInput.addEventListener("input", (event) => {
+    output.textContent = event.currentTarget.value.trim() || "Anonymous";
+});
